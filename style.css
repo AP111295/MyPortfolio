@@ -1,0 +1,447 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+h1, h2, p{
+  color: antiquewhite;
+  padding-top: 10px ;
+  padding-bottom: 10px;
+  font-family: "roboto", sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #C04848, #480048 ) repeat;
+    background-size: 100vw 100vh; 
+    height: auto;
+    width: 100%;
+    background-attachment: fixed;
+    }
+
+nav
+ul{
+    display: flex;
+    justify-content: left;
+    gap: 5%;
+    color: pink;
+    list-style: none;
+    font-family: "poppins", sans-serif;
+    font-weight: bold;
+    height: 50px;
+    padding-top: 20px;
+    /* border: white 2px solid; */
+    margin-bottom: 2rem;
+  }
+
+.holographic-container
+  {
+    display: inline-block;
+    width: 100%;
+    height: 70vh;
+    /* border: white 2px solid; */
+
+    .holographic-card
+    {
+      position: relative; 
+      border: 2px solid aquamarine;
+      box-shadow: 10px 10px 15px aquamarine;
+      border-radius: 10px;
+      width: 300px;
+      height: 350px;
+      padding: 20px;
+      margin: auto;
+      transition: all 0.5s ease;
+      
+    } 
+    .gif
+      {  
+          width: 100%;
+          height: 200px;
+          margin: auto;
+      }
+    ul{
+      list-style: none;
+      display: flex;
+    }
+    li{
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    i{
+      color: antiquewhite;
+    }
+    .btn {
+        
+      padding: 1rem 2rem;
+      margin-top: 1rem;
+       font-size: 1rem;
+       font-weight: 600;
+       color:white;
+       background: none;
+       border: 2px solid aquamarine;
+       border-radius: 8px;
+       cursor: pointer;
+       overflow: hidden;
+       transition: all 0.3s ease;
+     }    
+.glitch:hover {
+      animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+      background-color: aquamarine;
+    }
+    .glitch 
+    {
+          text-shadow: 0 0 5px #480048;
+        }
+    
+@keyframes glitch {
+      0% {
+        transform: translate(0);
+      }
+      20% {
+        transform: translate(-4px, 4px);
+      }
+      40% {
+        transform: translate(-4px, -4px);
+      }
+      60% {
+        transform: translate(4px, 4px);
+      }
+      80% {
+        transform: translate(4px, -4px);
+      }
+      100% {
+        transform: translate(0);
+      }
+ }
+
+  }
+
+
+.text, .Skills, .website, .contact, .container{
+  margin: auto; /* to center the elements in block */
+  width: 90%;
+  /* border: 2px solid white; */
+}
+
+.tools{
+
+      display: grid;
+      margin: 3rem;
+      grid-template-columns: 50% 50% ;
+    }
+  
+  img
+  {
+      width: 80px;
+      height: 80px;
+  }
+
+.website{
+  
+    height: auto;
+    .work1, .work2 {
+     margin-bottom: 10%;
+     width: 200px;
+     padding: 5%;
+   } 
+   img{
+     width: 300px;
+     height: 250px;
+   }
+ }
+
+ input[type=text], select, textarea {
+  width: 100%; 
+  padding: 12px;  
+  border: 1px solid pink; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  
+}
+
+
+input[type=submit] {
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 5px 5px 10px #480048;
+  padding: 12px 20px;
+  border: 2px solid aquamarine;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: aquamarine;
+}
+
+.container {
+  width: 300px;
+  border-radius: 5px;
+  background-color:transparent;
+  border: 1px solid aquamarine;
+  padding:5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  label{
+    font-size: 15px;
+    font-family: "roboto", sans-serif;
+    font-weight: bold;
+    color: pink;
+
+  }
+}
+
+  
+
+/* 
+i{
+  color: white;
+  margin-top: 1rem;
+}
+
+
+.gif
+    {  
+        width: 100%;
+        height: 200px;
+        margin: auto;
+    }
+.holographic-card
+    {
+      position: relative; 
+      color: white;
+      font-family: "roboto", sans-serif;
+      font-weight: bold;
+      border: 2px solid aquamarine;
+      box-shadow: 10px 10px 15px aquamarine;
+      border-radius: 10px;
+      width: 300px;
+      height: 280px;
+      padding: 20px;
+      margin: auto;
+      transition: all 0.5s ease;
+    } 
+
+p{
+      text-shadow: 0 0 10px #480048;
+      color: pink;
+  }
+.holographic-card h1 {
+      color:pink;
+      text-shadow: 0 0 5px #480048;
+      font-size: 2rem;
+      z-index: 2; 
+      }
+.btn {
+        
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+         font-size: 1rem;
+         font-weight: 600;
+         color:white;
+         background: none;
+         border: 2px solid aquamarine;
+         border-radius: 8px;
+         cursor: pointer;
+         overflow: hidden;
+         transition: all 0.3s ease;
+       }
+.glitch 
+{
+        text-shadow: 0 0 5px #480048;
+      }
+      
+.glitch:hover {
+        animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+        background-color: aquamarine;
+      }
+      
+@keyframes glitch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-4px, 4px);
+        }
+        40% {
+          transform: translate(-4px, -4px);
+        }
+        60% {
+          transform: translate(4px, 4px);
+        }
+        80% {
+          transform: translate(4px, -4px);
+        }
+        100% {
+          transform: translate(0);
+        }
+   }
+
+  
+
+.text{
+      margin: auto;
+      width: 90%;}
+    
+       
+    h1{
+        color:pink;
+        text-shadow: 0 0 5px #480048;
+        font-size: 3rem;
+       
+        
+    }
+    h2{
+      color: pink;
+        font-size: 25px;
+    }
+    p{
+        
+        font-size: 18px;
+        margin: 0;
+        font-family: "roboto", sans-serif;
+        font-weight: bold;
+        color: pink;
+        display: block;
+        line-height: 35px;
+    }
+.skills{
+  margin: auto;
+}
+    .tools{
+
+        display: grid;
+        grid-template-columns: 50% 50% ;
+      }
+    
+    img
+    {
+        width: 80px;
+        height: 80px;
+    }
+
+  .website{
+  
+     height: auto;
+    h1{
+      color:pink;
+      margin-top: 2rem;
+      text-shadow: 0 0 5px #480048;
+      font-size: 3rem;
+      
+      /* padding-left:20%;
+      padding-right: 20%; */
+      
+  /* }
+  h2{
+    color: pink;
+    font-size: 25px;
+  }
+  p{
+      
+      font-size: 18px;
+      margin: 0;
+      font-family: "roboto", sans-serif;
+      font-weight: bold;
+      color: pink;
+      display: block;
+      line-height: 35px;
+      padding-left:10%;
+      padding-right: 10%;
+  }
+  .work{
+    display:inline-block;
+    align-items: center;
+     .work1, .work2 {
+      margin-bottom: 10%;
+      text-align: center;
+      width: 300px;
+      padding: 5%;
+      border-radius: 10px;box-shadow: 5px 5px 10px aquamarine;
+    } 
+    img{
+      width: 300px;
+      height: 250px;
+    }
+  }
+  }
+  .contact
+  {
+    h1{
+      color:pink;
+      margin-top: 3rem;
+      text-shadow: 0 0 5px #480048;
+      font-size: 3rem;
+      /* padding-left:20%;
+      padding-right: 20%; */
+      
+  /* }
+  h2{
+    color: pink;
+    margin: 0;
+    font-size: 20px;
+  }
+  p{
+      
+      font-size: 18px;
+      margin: 0;
+      font-family: "roboto", sans-serif;
+      color: pink;
+      display: block;
+      line-height: 30px;
+  }
+  
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px;  
+    border: 1px solid pink; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    
+  }
+  
+  
+  input[type=submit] {
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-shadow: 5px 5px 10px #480048;
+    padding: 12px 20px;
+    border: 2px solid aquamarine;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: aquamarine;
+  }
+  
+  .container {
+    width: 300px;
+    border-radius: 5px;
+    background-color:transparent;
+    border: 1px solid aquamarine;
+    padding:5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    label{
+      font-size: 15px;
+      font-family: "roboto", sans-serif;
+      font-weight: bold;
+      color: pink;
+  
+    }
+  } */ 
+
+
