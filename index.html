@@ -7,19 +7,26 @@
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">    
+<link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Archana Pandey</title>
 </head>
 <body>
-<nav>
-    <ul>
-      <li>About</li>
-      <li>Resume</li>
-      <li>Projects</li>
-      <li>Contact</li>
-  </ul>
-</nav>
+  <div class="topnav">
+    <!-- <a href="#logo" class="active"></a> -->
+    <div id="myLinks">
+      <a href="#About">About</a>
+      <a href="#Resume">Resume</a>
+      <a href="#work">Work</a>
+      <a href="#Contact">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
     <div class="holographic-container">
       <div class="holographic-card">
         <h1>Hello, I am Archana,<br>Web Developer</h1>
@@ -71,11 +78,11 @@
       <h1>My work</h1>
       <div class="work">
           <div class="work1">
-            <img src="/images/Capture.bhakti.PNG" alt="">
+            <img class="wimg" src="/images/Capture.bhakti.PNG" alt="">
             <h2>Bhakti Yoga</h2>
           </div>
           <div class="work2">
-            <img src="/images/Capture.elgustava.PNG" alt="">
+            <img class="wimg" src="/images/Capture.elgustava.PNG" alt="">
             <h2>El Gustava Sunglasses</h2>
           </div>
       </div>

@@ -5,11 +5,16 @@
     box-sizing: border-box;}
 
 h1, h2, p{
-  color: antiquewhite;
-  padding-top: 10px ;
-  padding-bottom: 10px;
-  font-family: "roboto", sans-serif;
+  color:lightgoldenrodyellow;
+  padding-top: 15px ;
+  padding-bottom: 15px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
 }
+/* div{
+  padding-bottom: 2%;
+} */
 
 body {
     background: linear-gradient(45deg, #C04848, #480048 ) repeat;
@@ -19,24 +24,70 @@ body {
     background-attachment: fixed;
     }
 
-nav
+/* nav
 ul{
     display: flex;
     justify-content: left;
     gap: 5%;
-    color: pink;
+    color: lightgoldenrodyellow;
     list-style: none;
-    font-family: "poppins", sans-serif;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
     font-weight: bold;
     height: 50px;
     padding-top: 20px;
-    /* border: white 2px solid; */
+    /* border: white 2px solid; 
     margin-bottom: 2rem;
-  }
+  } */
+
+/* burger menu */ 
+
+.topnav {
+  overflow: hidden;
+  background: none;
+  position: relative;
+  margin-top: 5px ;
+  margin-bottom: 10px;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  float: left;
+  color: lightgoldenrodyellow;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  padding: 12px 12px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.topnav a.icon {
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+
+.topnav a:hover {
+  /* background-color: #ddd; */
+  color: lightgoldenrodyellow;
+}
+
+.active {
+  background-color: lightgoldenrodyellow;
+  color: white;
+  /* width: 48px; */
+}
+
+/* ------------------------------------------------------------------ */
 
 .holographic-container
   {
     display: inline-block;
+    padding-top: 10%;
     width: 100%;
     height: 70vh;
     /* border: white 2px solid; */
@@ -59,6 +110,7 @@ ul{
           width: 100%;
           height: 200px;
           margin: auto;
+          margin-top: 10%;
       }
     ul{
       list-style: none;
@@ -78,7 +130,7 @@ ul{
       margin-top: 1rem;
        font-size: 1rem;
        font-weight: 600;
-       color:white;
+       color: lightgoldenrodyellow;
        background: none;
        border: 2px solid aquamarine;
        border-radius: 8px;
@@ -128,29 +180,37 @@ ul{
 .tools{
 
       display: grid;
-      margin: 3rem;
+      justify-content: space-between;
+      gap: 15px;
       grid-template-columns: 50% 50% ;
     }
   
   img
   {
-      width: 80px;
-      height: 80px;
+      width: 50px;
+      height: 50px;
+      margin: auto;
   }
 
 .website{
-  
     height: auto;
-    .work1, .work2 {
-     margin-bottom: 10%;
-     width: 200px;
-     padding: 5%;
-   } 
-   img{
-     width: 300px;
-     height: 250px;
-   }
+    margin-top:10%; 
+    h1{
+      font-size: 32px;
+    }
  }
+ .work1, .work2{
+  text-align: center;
+ }
+ .wimg{
+  width: 300px;
+  height: 250px;
+  margin: auto;
+}
+
+.contact{
+  margin-top:10%;
+}
 
  input[type=text], select, textarea {
   width: 100%; 
@@ -190,7 +250,8 @@ input[type=submit]:hover {
   margin-bottom: 5%;
   label{
     font-size: 15px;
-    font-family: "roboto", sans-serif;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
     font-weight: bold;
     color: pink;
 
