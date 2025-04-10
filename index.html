@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">    
-<link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
     <title>Archana Pandey</title>
 </head>
 <body>
@@ -27,27 +23,12 @@
       <i class="fa fa-bars"></i>
     </a>
   </div>
+    <!-- holographic-container animation -->
     <div class="holographic-container">
       <div class="holographic-card">
-        <h1>Hello, I am Archana,<br>Web Developer</h1>
-        <P>I build Websites for living !</P>
-        <ul>
-            <li>
-              <a href="#">
-                <i class="fab fa-facebook-f icon"></i>    </a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-twitter icon"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
-            <li>
-              <a href="#"><i class="fab fa-google-plus-g icon"></i></a></li>
-          </ul>
-        <button class="btn glitch">
-            <span>Resume</span>
-          </button>
-        </a>
+        <h1 class="cursor typewriter-animation">Hello,<br>I am Archana,<br>Web Developer</h1>
+        <p class="cursor typewriter-animation">I make websites for living</p>
+        <button class="btn btn-pulse">My Resume</button>
       </div>
         <!-- for the animation -->
          <div>
@@ -59,31 +40,31 @@
           <h2>A bit about me</h2>
         <p>I am a web developer who turns coffee into clean code and bold ideas into beautiful websites.
             When I’m not coding, you’ll find me tinkering with new tech, sketching wild ideas on Figma, or getting lost in a rabbit hole of creative inspiration.
-            Does that sound good? then, Let’s build something awesome together!  🚀</p>
+            Does that sound good? then, Let’s build something awesome together! </p>
           </div>
           <div class="Skills">
             <h1>Skills</h1>
             <div class="tools">
-                <img src="/images/html.png" alt="html-logo">
-                <img src="/images/css-3.png" alt="css-logo">
-                <img src="/images/js.png" alt="js-logo">
-                <img src="/images/sass.png" alt="sass-logo">
-                <img src="/images/github.png" alt="github-logo">
-                <img src="/images/figma.png" alt="figma-logo">
-                <img src="/images/wordpress.png" alt="wordpress-logo">
-                <img src="/images/postman.svg" alt="postman-logo">
+                <img src="/images/html.png" alt="html-logo" class="slide">
+                <img src="/images/css-3.png" alt="css-logo" class="slide">
+                <img src="/images/js.png" alt="js-logo" class="slide">
+                <img src="/images/sass.png" alt="sass-logo" class="slide">
+                <img src="/images/github.png" alt="github-logo" class="slide">
+                <img src="/images/figma.png" alt="figma-logo" class="slide">
+                <img src="/images/wordpress.png" alt="wordpress-logo" class="slide">
+                <img src="/images/postman.svg" alt="postman-logo" class="slide">
             </div> 
           </div>  
     <section class="website">
       <h1>My work</h1>
       <div class="work">
           <div class="work1">
-            <img class="wimg" src="/images/Capture.bhakti.PNG" alt="">
-            <h2>Bhakti Yoga</h2>
+            <img class="wimg" src="/images/pexels-otavio-4665064.jpg" alt="">
+           
           </div>
           <div class="work2">
-            <img class="wimg" src="/images/Capture.elgustava.PNG" alt="">
-            <h2>El Gustava Sunglasses</h2>
+            <img class="wimg" src="/images/pexels-paras-4218883.jpg" alt="">
+         
           </div>
       </div>
     </section>
@@ -111,7 +92,7 @@
         <label for="Message">Message</label>
         <textarea id="Message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
     
-        <input type="submit" value="Submit">
+        <input type="submit" class="btn btn-pulse" value="Submit">
     
       </form>
     </div>
