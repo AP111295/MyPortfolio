@@ -11,19 +11,25 @@
     <title>Archana Pandey</title>
 </head>
 <body>
-  <div class="topnav">
-    <!-- <a href="#logo" class="active"></a> -->
-    <div id="myLinks">
-      <a href="#About">About</a>
-      <a href="#Resume">Resume</a>
-      <a href="#work">Work</a>
-      <a href="#Contact">Contact</a>
+  <!--------------------Menu-------------------------->
+  <div id="menu">
+    <div id="menu-bar" onclick="menuOnClick()">
+      <div id="bar1" class="bar"></div>
+      <div id="bar2" class="bar"></div>
+      <div id="bar3" class="bar"></div>
     </div>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav> 
   </div>
-    <!-- holographic-container animation -->
+  <div class="menu-bg" id="menu-bg"></div>
+    <!-- ------------------Holographic-container animation----------------------------- -->
+   
     <div class="holographic-container">
       <div class="holographic-card">
         <h1 class="cursor typewriter-animation">Hello,<br>I am Archana,<br>Web Developer</h1>
@@ -54,22 +60,52 @@
                 <img src="/images/wordpress.png" alt="wordpress-logo" class="slide">
                 <img src="/images/postman.svg" alt="postman-logo" class="slide">
             </div> 
+            <div class="tools">
+              <img src="/images/html.png" alt="html-logo" class="slide">
+              <img src="/images/css-3.png" alt="css-logo" class="slide">
+              <img src="/images/js.png" alt="js-logo" class="slide">
+              <img src="/images/sass.png" alt="sass-logo" class="slide">
+              <img src="/images/github.png" alt="github-logo" class="slide">
+              <img src="/images/figma.png" alt="figma-logo" class="slide">
+              <img src="/images/wordpress.png" alt="wordpress-logo" class="slide">
+              <img src="/images/postman.svg" alt="postman-logo" class="slide">
+
+            </div>
           </div>  
-    <section class="website">
-      <h1>My work</h1>
-      <div class="work">
-          <div class="work1">
-            <img class="wimg" src="/images/pexels-otavio-4665064.jpg" alt="">
-           
+          <h1 class="slh1">My Work</h1>
+          <div class="slbody">
+            <div class="slider">
+              <div class="item">
+                  <h1>Slide 1</h1>
+                  <button class="slb">View</button>
+              </div>
+              <div class="item">
+                  <h1>Slide 2</h1>
+                  <button class="slb">View</button>
+              </div>
+              <div class="item">
+
+
+
+
+                  <h1>Bouncing balls animation</h1>
+                  <button class="slb">View</button>
+              </div>
+              <div class="item">
+                  <h1>Slide 4</h1>
+                  <button class="slb">View</button>              
+                </div>
+              <div class="item">
+                  <h1>Slide 5</h1>
+                  <button class="slb">View</button>
+              </div>
+             
+              <button id="next">></button>
+              <button id="prev"><</button>
           </div>
-          <div class="work2">
-            <img class="wimg" src="/images/pexels-paras-4218883.jpg" alt="">
-         
           </div>
-      </div>
-    </section>
+    </section> 
    
-      
       <div class="contact">
         <h1>Contact me</h1>
         <h2>Email</h2>

@@ -33,43 +33,104 @@ body {
     background-attachment: fixed;
     }
 
-
-.topnav {
-  overflow: hidden;
-  background: none;
-  position: relative;
-  margin-top: 5px ;
-  margin-bottom: 10px;
+/* -------Menu--------------------------------------- */
+#menu {
+  z-index: 2;
 }
 
-.topnav #myLinks {
-   display: none; 
+#menu-bar {
+  width: 45px;
+  height: 40px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
 }
 
-.topnav a {
-  float: left;
-  color: lightgoldenrodyellow;
-  font-family: "Rubik", sans-serif;
+.bar {
+  height: 5px;
+  width: 100%;
+  background-color:  #F6FDC3;
+  display: block;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+#bar1 {
+  transform: translateY(-4px);
+}
+
+#bar3 {
+  transform: translateY(4px);
+}
+
+.nav {
+  transition: 0.3s ease;
+  display: none;
+}
+
+.nav ul {
+  padding: 0 22px;
+  flex-direction: column;
+}
+
+.nav li {
+  list-style: none;
+  padding: 12px 0;
+}
+
+.nav li a {
+  color: #C04848;
+  font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: bold;
-  padding: 12px 12px;
+  font-weight:bold;
+  font-size: 20px;
   text-decoration: none;
-  font-size: 15px;
+
 }
 
-.topnav a.icon {
-  float: right;
-  width: 50px;
-  height: 50px;
+.nav li a:hover {
+  font-weight: bold;
 }
 
-.topnav a:hover {
-  color: lightgoldenrodyellow;
+.menu-bg, #menu {
+  top: 0;
+  left: 0;
+  position: absolute;
 }
 
-.active {
-  background-color: lightgoldenrodyellow;
-  color: white;
+.menu-bg {
+  z-index: 1;
+  width: 0;
+  height: 0;
+  margin: 30px 0 20px 20px;
+  background: radial-gradient(circle,  #F6FDC3,  #F6FDC3);
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.change {
+  display: block;
+}
+
+.change .bar {
+  background-color: #C04848;
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar2 {
+  opacity: 0;
+}
+
+.change #bar3 {
+  transform: translateY(-6px) rotateZ(45deg);
+}
+
+.change-bg {
+  width: 520px;
+  height: 460px;
+  transform: translate(-60%,-30%);
 }
 
 /* ------------------------------------------------------------------ */
@@ -77,6 +138,7 @@ body {
 .holographic-container
   {
     display: inline-block;
+    margin-top: 20%;
     width: 100%;
     height: 70vh;
   }
@@ -173,65 +235,140 @@ body {
   }
 
 
-.text, .Skills, .website, .contact, .container{
+.text, .Skills, .website, .contact, .container {
   margin: auto; /* to center the elements in block */
   width: 90%;
-  /* border: 2px solid white; */
+
 }
 
-.tools{
 
-      display: grid;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 30px;
-      grid-template-columns: 50% 50% ;
-    }
+ /* -----------------------Skills and tools---------------------------------------- */
   
-  img
-  {
-      width: 70px;
-      height: 70px;
-      margin: auto;  
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
-  .wipe-enter  .slide{
-    animation-name: wipe-enter;
-      animation-duration: 1s;
-      animation-iteration-count: 1; 
+  
+  .Skills {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .Skills:before,
+  .Skills:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .Skills:before {
+    left: 0;
+   
+  }
+  
+  .Skills:after {
+    right: 0;
 
   }
-  @keyframes wipe-enter {
-    0% {
-      transform: scale(0, .025);
-    }
-    50% {
-      transform: scale(1, .025);
-    }
+  
+  .Skills:hover .tools {
+    animation-play-state: paused;
+  }
+  
+  .tools {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+    margin-top: 50px;
+  }
+  
+  .tools img {
+    height: 80px;
+    width: 80px;
+    margin: 0 40px;
   }
 
-.website{
-    height: auto;
-    margin-top:10%; 
-    h1{
-      font-size: 32px;
-    }
- }
- .work1, .work2{
-  text-align: center;
- }
- .wimg{
-  width: 300px;
-  height: 250px;
+
+/* ------------------------My project slider-------------------------------- */
+.slbody{
+
+  min-height: 60vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+}
+.slh1{
   margin: auto;
-  border-radius: 10px;
-  margin-top: 30px;
-  padding: 10px;
-  border: 1px solid aquamarine;
+  width: 90%;
 }
 
-.contact{
-  margin-top:10%;
+.slider{
+  position: relative;
+  width: 100%;
+  height: 370px;
+  overflow: hidden;
 }
+.item{
+  position: absolute;
+  width: 200px;
+  height: 320px;
+  text-align: justify;
+  background-color: #F6FDC3;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50% - 110px);
+  top: 0;
+}
+#next, #prev{
+  position: absolute;
+  top: 40%;
+  color: #F6FDC3;
+  background-color: transparent;
+  border: none;
+  font-size: xxx-large;
+  font-family: monospace;
+  font-weight: bold;
+  left: 400px;
+}
+#next{
+  left: 90%;
+  /* border: 2px solid red; */
+  right: 400px;
+}
+#prev{
+  left: 10%;
+}
+.item h1{
+  color: #C04848;
+}
+.slb{
+  
+  padding: 1rem 2rem;
+  width: 100px;
+  font-size: 1rem;
+  color: #C04848;
+  background: none;
+  border: 2px solid aquamarine;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+
+/* -------------------------------------------------------- */
+
 
  input[type=text], select, textarea {
   width: 100%; 
@@ -262,13 +399,15 @@ input[type=submit]:hover {
 }
 
 .container {
-  width: 300px;
+  width: auto;
+  margin: 5%;
   border-radius: 5px;
   background-color:transparent;
   border: 1px solid aquamarine;
   padding:5%;
   margin-top: 5%;
   margin-bottom: 5%;
+
   label{
     font-size: 15px;
     font-family: "Rubik", sans-serif;
