@@ -235,7 +235,7 @@ body {
   }
 
 
-.text, .Skills, .website, .contact, .container {
+.text, .Skills, .website, .contact, .container, .slider-section{
   margin: auto; /* to center the elements in block */
   width: 90%;
 
@@ -298,66 +298,67 @@ body {
 
 
 /* ------------------------My project slider-------------------------------- */
-.slbody{
 
-  min-height: 60vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: monospace;
-}
-.slh1{
-  margin: auto;
-  width: 90%;
+.slider-section {
+  margin-top: 30px;
 }
 
-.slider{
+.slider-section .slider {
   position: relative;
   width: 100%;
   height: 370px;
   overflow: hidden;
+  margin-top: 60px;
 }
-.item{
+
+.slider-section .item {
   position: absolute;
   width: 200px;
   height: 320px;
   text-align: justify;
-  background-color: #F6FDC3;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   transition: 0.5s;
-  left: calc(50% - 110px);
+  left: calc(50% - 100px);
   top: 0;
+  color: #333;
 }
-#next, #prev{
+
+.slider-section #next, .slider-section #prev {
   position: absolute;
   top: 40%;
-  color: #F6FDC3;
+  color: #fff;
   background-color: transparent;
   border: none;
   font-size: xxx-large;
   font-family: monospace;
   font-weight: bold;
-  left: 400px;
+  z-index: 10;
 }
-#next{
-  left: 90%;
-  /* border: 2px solid red; */
-  right: 400px;
+
+.slider-section #prev {
+  left: 20px;
 }
-#prev{
-  left: 10%;
+.slider-section #next {
+  right: 20px;
 }
-.item h1{
-  color: #C04848;
+.slh1{
+  font-size: 32px;
+
 }
+
+.item h1, p{
+  color: #eb8080;
+ }
+
+
 .slb{
   
   padding: 1rem 2rem;
   width: 100px;
   font-size: 1rem;
-  color: #C04848;
+  color: #be7e7e;
   background: none;
   border: 2px solid aquamarine;
   font-family: "Rubik", sans-serif;
@@ -367,7 +368,7 @@ body {
 }
 
 
-/* -------------------------------------------------------- */
+/* ----------------Contact---------------------------------------- */
 
 
  input[type=text], select, textarea {
@@ -417,4 +418,7 @@ input[type=submit]:hover {
 
   }
 }
+
+/* social media icons */
+
 
