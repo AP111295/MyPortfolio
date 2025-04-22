@@ -16,12 +16,14 @@ h1, h2{
 }
 p{
   color: #F6FDC3;
+  line-height: 30px;
   padding-top: 15px ;
   padding-bottom: 15px;
   font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight:400;
+  font-weight:500;
   font-style: normal;
+  font-size: 20px;
 }
 
 
@@ -151,7 +153,7 @@ body {
       border: 2px solid aquamarine;
       box-shadow: 10px 10px 15px aquamarine;
       border-radius: 10px;
-      width: 300px;
+      width: 310px;
       height: 350px;
       padding: 20px;
       margin: auto;
@@ -162,7 +164,7 @@ body {
       border-right: 2px solid rgba(255,255,255,.75);
       white-space: nowrap;
       overflow: hidden;
-      transform: translateY(-50%);  
+      transform: translateY(-30%);  
       }
   
   /* Animation */
@@ -203,7 +205,7 @@ body {
     padding: 1rem 2rem;
     width: 190px;
     font-size: 1rem;
-    color:antiquewhite;
+    color: #F6FDC3;
     background: none;
     border: 2px solid aquamarine;
     font-family: "Rubik", sans-serif;
@@ -218,7 +220,7 @@ body {
   /* 1. Pulse Animation */
   .btn-pulse {
     background: linear-gradient(45deg, #C04848, #480048 ) ;
-    color: antiquewhite;
+    color: #F6FDC3;
     animation: pulse 1.5s infinite;
   }
   
@@ -243,7 +245,29 @@ body {
 
 
  /* -----------------------Skills and tools---------------------------------------- */
-  
+  #about{
+    display: flex;
+    justify-content:space-evenly;
+    gap: 50px;
+  }
+  button{
+    padding: 1rem 1rem;
+    margin: 5px;
+    font-size: 1rem;
+    color: #F6FDC3;
+    background: none;
+    border: 1px solid #F6FDC3;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 16px;
+
+  }
+  button:hover{
+    background-color: #F6FDC3;
+    color: #6d3a6d;
+  }
+
   @keyframes slide {
     from {
       transform: translateX(0);
@@ -315,8 +339,8 @@ body {
   position: absolute;
   width: 200px;
   height: 320px;
-  text-align: justify;
-  background-color: #fff;
+  /* text-align: justify; */
+  background-color:bisque;
   border-radius: 10px;
   padding: 20px;
   transition: 0.5s;
@@ -348,8 +372,11 @@ body {
 
 }
 
-.item h1, p{
-  color: #eb8080;
+.item h1{
+  color: #C04848;
+ }
+ .item p{
+  color: #C04848;
  }
 
 
@@ -358,13 +385,15 @@ body {
   padding: 1rem 2rem;
   width: 100px;
   font-size: 1rem;
-  color: #be7e7e;
+  color: #C04848;
   background: none;
-  border: 2px solid aquamarine;
+  border: 2px solid #6d3a6d;
+  box-shadow: 5px 5px #C04848;
   font-family: "Rubik", sans-serif;
   font-weight: bold;
   border-radius: 8px;
   font-size: 16px;
+  margin-top: 50px;
 }
 
 
@@ -433,7 +462,7 @@ input[type=submit]:hover {
     align-items: center;
   } 
   .holographic-card{
-    width: 300px;
+    width: 310px;
     height: 350px;
     margin: auto;}
  
@@ -514,8 +543,13 @@ input[type=submit]:hover {
     font-size: 32px;
   } 
   .container{
-    width: 600px;
+    width: 800px;
     margin: auto;
+  }
+  .slider-section .item {
+    width: 250px;
+    height: 320px;
+    
   }
 }
 
