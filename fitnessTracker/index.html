@@ -18,6 +18,7 @@
 <body>
     <!-- Main container wrapping all content -->
     <div class="container">
+        <div class="first">
         <!-- Header with main title and description -->
         <header>
             <h1>Track your Fitness</h1>
@@ -38,8 +39,10 @@
                 <h3>Total Calories Burned: <span id="total-calories">0</span></h3>
             </div>
         </section>
+    </div>
 
         <!-- Section for listing all added workouts -->
+         <div class="second">
         <section class="workout-list">
             <h2>Your Workouts</h2>
             <!-- Unordered list where each workout will be dynamically added -->
@@ -53,6 +56,7 @@
             <canvas id="caloriesChart"></canvas>
         </section>
     </div>
+</div>
 
     <!-- Link to external JavaScript file for functionality -->
     <script src="script.js"></script>
