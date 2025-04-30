@@ -28,8 +28,8 @@ p{
 
 
 body {
-    background: linear-gradient(45deg, #C04848, #480048 ) repeat;
-    background-size: 100vw 100vh; 
+    background: linear-gradient(45deg, #C04848, #480048 ) no-repeat;
+    background-size: 100% 100%; 
     height: auto;
     width: 100%;
     background-attachment: fixed;
