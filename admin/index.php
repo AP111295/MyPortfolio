@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-// access website : http://localhost/MyPortfolio-main/
-// access admin panel : http://localhost:8000/admin/
-// Enter the login credentials:
-// Username : admin
-// Password : admin123
 // Simple admin authentication (you should enhance this for production)
 $admin_username = 'admin';
 $admin_password = 'admin123'; // Change this password!
@@ -79,21 +74,16 @@ if ($logged_in) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Contact Messages</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        *, ::before, ::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
         body {
-            font-family: "Work Sans", sans-serif;
-            background: linear-gradient(45deg, #C04848, #480048) no-repeat;
-            background-size: 100% 100%;
-            background-attachment: fixed;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -101,125 +91,85 @@ if ($logged_in) {
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: rgba(246, 253, 195, 0.1);
-            border: 2px solid aquamarine;
-            box-shadow: 10px 10px 30px aquamarine;
+            background: white;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             overflow: hidden;
         }
         
         .header {
-            background: linear-gradient(45deg, #C04848, #480048);
-            color: #F6FDC3;
-            padding: 40px;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
             text-align: center;
-            border-bottom: 2px solid aquamarine;
         }
         
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            color: #F6FDC3;
-            opacity: 0.9;
         }
         
         .login-form {
-            max-width: 450px;
+            max-width: 400px;
             margin: 50px auto;
-            padding: 50px;
-            background: rgba(246, 253, 195, 0.1);
-            border: 2px solid aquamarine;
-            box-shadow: 10px 10px 30px aquamarine;
+            padding: 40px;
+            background: white;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         
         .login-form h2 {
             text-align: center;
             margin-bottom: 30px;
-            color: #F6FDC3;
-            font-size: 2rem;
-            font-weight: bold;
+            color: #2c3e50;
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #F6FDC3;
-            font-size: 1.1rem;
+            color: #2c3e50;
         }
         
         .form-group input {
             width: 100%;
-            padding: 15px;
-            border: 2px solid aquamarine;
+            padding: 12px;
+            border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 16px;
-            background: rgba(246, 253, 195, 0.1);
-            color: #F6FDC3;
-            transition: all 0.3s ease;
-            font-family: "Work Sans", sans-serif;
-        }
-        
-        .form-group input::placeholder {
-            color: rgba(246, 253, 195, 0.6);
+            transition: border-color 0.3s;
         }
         
         .form-group input:focus {
             outline: none;
-            border-color: #F6FDC3;
-            box-shadow: 0 0 15px aquamarine;
+            border-color: #3498db;
         }
         
         .btn {
-            background: linear-gradient(45deg, #C04848, #480048);
-            color: #F6FDC3;
-            padding: 15px 30px;
-            border: 2px solid aquamarine;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 12px 30px;
+            border: none;
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
-            font-weight: bold;
-            font-family: "Work Sans", sans-serif;
-            transition: all 0.3s ease;
+            transition: transform 0.3s;
             width: 100%;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
         
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px aquamarine;
         }
         
         .btn-logout {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            background: #e74c3c;
             padding: 10px 20px;
             width: auto;
             float: right;
-            font-size: 14px;
-            animation: none;
-        }
-        
-        .btn-logout:hover {
-            background: linear-gradient(45deg, #c0392b, #a93226);
         }
         
         .messages-container {
@@ -227,32 +177,29 @@ if ($logged_in) {
         }
         
         .message-card {
-            background: rgba(246, 253, 195, 0.1);
-            border: 1px solid aquamarine;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: transform 0.3s;
         }
         
         .message-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px aquamarine;
-            border-color: #F6FDC3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .message-card.unread {
-            border-left: 5px solid #F6FDC3;
-            background: rgba(246, 253, 195, 0.2);
-            box-shadow: 0 0 20px rgba(127, 255, 212, 0.3);
+            border-left: 5px solid #3498db;
+            background: #e8f4fd;
         }
         
         .message-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
         
@@ -261,172 +208,108 @@ if ($logged_in) {
         }
         
         .message-info h3 {
-            color: #F6FDC3;
-            margin-bottom: 8px;
-            font-size: 1.3rem;
-            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
         }
         
         .message-info p {
-            color: aquamarine;
+            color: #7f8c8d;
             font-size: 14px;
-            line-height: 1.4;
         }
         
         .message-actions {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
         
         .btn-small {
-            padding: 8px 16px;
+            padding: 5px 15px;
             font-size: 12px;
-            border-radius: 6px;
+            border-radius: 5px;
             text-decoration: none;
-            color: #F6FDC3;
-            border: 1px solid aquamarine;
+            color: white;
+            border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            font-family: "Work Sans", sans-serif;
+            transition: opacity 0.3s;
         }
         
         .btn-small:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(127, 255, 212, 0.4);
+            opacity: 0.8;
         }
         
         .btn-read {
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-        }
-        
-        .btn-read:hover {
-            background: linear-gradient(45deg, #2ecc71, #58d68d);
+            background: #27ae60;
         }
         
         .btn-delete {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-        }
-        
-        .btn-delete:hover {
-            background: linear-gradient(45deg, #c0392b, #a93226);
+            background: #e74c3c;
         }
         
         .message-content {
-            background: rgba(246, 253, 195, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid aquamarine;
-            color: #F6FDC3;
-            font-size: 16px;
-            line-height: 1.6;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #3498db;
         }
         
         .alert {
-            padding: 18px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            border: 2px solid;
-            font-weight: bold;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
         }
         
         .alert-success {
-            background: rgba(46, 204, 113, 0.2);
-            color: #F6FDC3;
-            border-color: #2ecc71;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
         }
         
         .alert-error {
-            background: rgba(231, 76, 60, 0.2);
-            color: #F6FDC3;
-            border-color: #e74c3c;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
         
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
         
         .stat-card {
-            background: linear-gradient(45deg, #C04848, #480048);
-            color: #F6FDC3;
-            padding: 30px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            border: 2px solid aquamarine;
-            box-shadow: 5px 5px 20px rgba(127, 255, 212, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px aquamarine;
         }
         
         .stat-card h3 {
-            font-size: 3rem;
+            font-size: 2rem;
             margin-bottom: 10px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .stat-card p {
-            font-size: 1.1rem;
-            font-weight: 600;
         }
         
         .no-messages {
             text-align: center;
-            color: #F6FDC3;
-            font-size: 20px;
-            margin: 60px 0;
-            padding: 40px;
-            background: rgba(246, 253, 195, 0.1);
-            border: 2px solid aquamarine;
-            border-radius: 15px;
-        }
-        
-        .no-messages h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #F6FDC3;
+            color: #7f8c8d;
+            font-size: 18px;
+            margin: 50px 0;
         }
         
         .back-link {
             display: inline-block;
-            margin-bottom: 25px;
-            color: aquamarine;
+            margin-bottom: 20px;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
         }
         
         .back-link:hover {
-            color: #F6FDC3;
-            text-shadow: 0 0 10px aquamarine;
+            text-decoration: underline;
         }
         
-        /* Loading animation for login form */
-        .login-form {
-            animation: slideIn 0.6s ease-out;
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive design */
         @media (max-width: 768px) {
             .message-header {
                 flex-direction: column;
@@ -434,78 +317,50 @@ if ($logged_in) {
             }
             
             .message-actions {
-                margin-top: 15px;
+                margin-top: 10px;
                 width: 100%;
             }
             
             .header h1 {
                 font-size: 2rem;
             }
-            
-            .login-form {
-                margin: 20px;
-                padding: 30px;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(72, 0, 72, 0.1);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, #C04848, #480048);
-            border-radius: 6px;
-            border: 2px solid aquamarine;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, #480048, #C04848);
         }
     </style>
 </head>
 <body>
     <?php if (!$logged_in): ?>
         <div class="login-form">
-            <h2>🔐 Admin Access Portal</h2>
+            <h2>🔐 Admin Login</h2>
             <?php if (isset($error_message)): ?>
                 <div class="alert alert-error"><?php echo $error_message; ?></div>
             <?php endif; ?>
             
             <form method="POST">
                 <div class="form-group">
-                    <label for="username">👤 Username:</label>
-                    <input type="text" id="username" name="username" placeholder="Enter admin username" required>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="password">🔑 Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter admin password" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 
-                <button type="submit" name="login" class="btn">🚀 Access Dashboard</button>
+                <button type="submit" name="login" class="btn">Login</button>
             </form>
             
-            <div style="margin-top: 25px; text-align: center;">
-                <small style="color: aquamarine; font-size: 14px;">Default: admin / admin123</small><br>
+            <div style="margin-top: 20px; text-align: center;">
+                <small>Default credentials: admin / admin123</small><br>
                 <a href="../index.html" class="back-link">← Back to Portfolio</a>
             </div>
         </div>
     <?php else: ?>
         <div class="container">
             <div class="header">
-                <h1>📧 Portfolio Command Center</h1>
-                <p>Contact Message Management Dashboard</p>
-                <form method="POST" style="margin-top: 25px;">
-                    <button type="submit" name="logout" class="btn-logout">🚪 Logout</button>
+                <h1>📧 Contact Messages Dashboard</h1>
+                <p>Manage your portfolio contact form messages</p>
+                <form method="POST" style="margin-top: 20px;">
+                    <button type="submit" name="logout" class="btn-logout">Logout</button>
                 </form>
             </div>
             
@@ -524,15 +379,15 @@ if ($logged_in) {
                 <div class="stats">
                     <div class="stat-card">
                         <h3><?php echo count($messages); ?></h3>
-                        <p>📩 Total Messages</p>
+                        <p>Total Messages</p>
                     </div>
                     <div class="stat-card">
                         <h3><?php echo count(array_filter($messages, function($m) { return !$m['is_read']; })); ?></h3>
-                        <p>🆕 Unread Messages</p>
+                        <p>Unread Messages</p>
                     </div>
                     <div class="stat-card">
                         <h3><?php echo count(array_filter($messages, function($m) { return $m['is_read']; })); ?></h3>
-                        <p>✅ Read Messages</p>
+                        <p>Read Messages</p>
                     </div>
                 </div>
                 
@@ -558,13 +413,13 @@ if ($logged_in) {
                                 </div>
                                 <div class="message-actions">
                                     <?php if (!$message['is_read']): ?>
-                                        <a href="?read=<?php echo $message['id']; ?>" class="btn-small btn-read">✅ Mark as Read</a>
+                                        <a href="?read=<?php echo $message['id']; ?>" class="btn-small btn-read">Mark as Read</a>
                                     <?php endif; ?>
-                                    <a href="?delete=<?php echo $message['id']; ?>" class="btn-small btn-delete" onclick="return confirm('Are you sure you want to delete this message?')">🗑️ Delete</a>
+                                    <a href="?delete=<?php echo $message['id']; ?>" class="btn-small btn-delete" onclick="return confirm('Are you sure you want to delete this message?')">Delete</a>
                                 </div>
                             </div>
                             <div class="message-content">
-                                <strong>💬 Message:</strong><br>
+                                <strong>Message:</strong><br>
                                 <?php echo nl2br(htmlspecialchars($message['message'])); ?>
                             </div>
                         </div>
