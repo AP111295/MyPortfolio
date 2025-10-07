@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+h1{
+    color: cornflowerblue;
+    font-size: 45px;
+}
+p{
+    color: rgb(163, 68, 68);
+    font-size: large;
+}
+#canvas {
+    position: relative;
+    background-color:lemonchiffon;
+    margin: 1em auto;
+}
+.ball {
+    background-color: black;
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+}
