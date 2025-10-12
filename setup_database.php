@@ -1,25 +1,24 @@
 <?php
 // Database setup script
-// Run this file once to create the database and table
 
 $host = 'localhost';
 $username = 'root';
 $password = ''; // Default XAMPP MySQL password is empty
 
 try {
-    // First, connect without specifying a database to create the database
+    // Connecting to MySQL server
     $pdo = new PDO("mysql:host=$host;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    // Create database
+    // Creating database
     $sql = "CREATE DATABASE IF NOT EXISTS portfolio_db";
     $pdo->exec($sql);
     echo "Database 'portfolio_db' created successfully.<br>";
     
-    // Now connect to the specific database
+    // Now connecting to the specific database
     $pdo = new PDO("mysql:host=$host;dbname=portfolio_db;charset=utf8", $username, $password);
-    
-    // Create contact_messages table
+
+    // Creating contact_messages table
     $sql = "CREATE TABLE IF NOT EXISTS contact_messages (
         id INT AUTO_INCREMENT PRIMARY KEY,
         first_name VARCHAR(100) NOT NULL,

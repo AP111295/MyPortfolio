@@ -61,6 +61,10 @@ if ($logged_in) {
     }
     
     // Fetch all messages
+    // Selects all contact messages from the database
+    // Orders them by creation date (newest first)
+    // Uses $pdo->query() since there are no parameters
+    // Fetches all results into the $messages variable
     try {
         $sql = "SELECT * FROM contact_messages ORDER BY created_at DESC";
         $stmt = $pdo->query($sql);
@@ -653,7 +657,7 @@ if ($logged_in) {
                                         📧 <?php echo htmlspecialchars($message['email']); ?> | 
                                         📅 <?php echo date('M j, Y g:i A', strtotime($message['created_at'])); ?>
                                         <?php if (!$message['is_read']): ?>
-                                            <span style="color: #F6FDC3; background: #C04848; padding: 3px 8px; border-radius: 12px; font-weight: bold; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">• NEW</span>
+                                            <span style="color: #ffffff; background: linear-gradient(135deg, #ff6b6b, #ee5a52); padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);">• NEW</span>
                                         <?php endif; ?>
                                     </p>
                                 </div>
