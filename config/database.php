@@ -3,7 +3,7 @@
 $host = 'localhost';
 $dbname = 'portfolio_db';
 $username = 'root';
-$password = ''; // Default XAMPP MySQL password is empty
+$password = 'StrongPassword123!'; // Updated MySQL password
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
